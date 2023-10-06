@@ -36,7 +36,7 @@ plug "kak-lsp/kak-lsp" do %{
     define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
 
     define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-    hook global WinSetOption filetype=(c|cpp|cc|rust|javascript|typescript) %{
+    hook global WinSetOption filetype=(c|cpp|cc|rust|javascript|typescript|cs|sql) %{
         set-option window lsp_auto_highlight_references true
         set-option window lsp_hover_anchor false
         lsp-auto-hover-enable
